@@ -41,7 +41,7 @@ public class DashboardRepositoryImpl implements DashboardRepository {
 	@Override
 	public List getUserMeassageList(int frommsg, int tomsg) {
 		// TODO Auto-generated method stub
-		String getAllUsers= "select  id,text,from_msg,to_msg FROM demoforreact.message where from_msg=? and to_msg=? or from_msg=? and to_msg=?;";
+		String getAllUsers= "select  id,text,from_msg,to_msg FROM message where from_msg=? and to_msg=? or from_msg=? and to_msg=?;";
 		return jdbcTemplate.query( getAllUsers,new Object[] {frommsg,tomsg,tomsg,frommsg}, new RowMapper<Message>() {
 			public Message mapRow(ResultSet rs, int row) throws SQLException {
 				Message client = new Message();
