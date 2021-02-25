@@ -71,7 +71,7 @@ public class DashboardRepositoryImpl implements DashboardRepository {
 						Statement.RETURN_GENERATED_KEYS);
 
 				statement.setInt(1, m.getFromMsg());
-				statement.setInt(2, m.getTo());
+				//statement.setInt(2, m.getTo());
 				statement.setString(3, m.getText());
 				return statement;
 			}
