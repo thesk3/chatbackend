@@ -1,20 +1,38 @@
 package com.chrisvz.rands.chrisvzrands.vo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "user_chat_list")
 public class UserAdd {
 
-	private int userID;
-	private int listID;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+
+	@Column(name = "user_id")
+	private long userID;
+	
+	@Column(name = "list_id")
+	private long listID;
+	
+	@Column(name = "name")
 	private String name;
-	public int getUserID() {
+	public long getUserID() {
 		return userID;
 	}
-	public void setUserID(int userID) {
+	public void setUserID(long userID) {
 		this.userID = userID;
 	}
-	public int getListID() {
+	public long getListID() {
 		return listID;
 	}
-	public void setListID(int listID) {
+	public void setListID(long listID) {
 		this.listID = listID;
 	}
 	public String getName() {
@@ -27,5 +45,15 @@ public class UserAdd {
 	public String toString() {
 		return "UserAdd [userID=" + userID + ", listID=" + listID + ", name=" + name + "]";
 	}
+	public UserAdd(long l, long m, String name) {
+		super();
+		this.userID = l;
+		this.listID = m;
+		this.name = name;
+	}
+	public UserAdd() {
+		
+	}
+
 	
 }

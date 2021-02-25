@@ -14,4 +14,6 @@ public interface DashboardService {
 
 	int addToUserList(int userID, int listID, String name);
 
+	List getLOginData();
+
 }

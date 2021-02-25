@@ -42,4 +42,11 @@ public class DashboardServiceImpl implements DashboardService {
 		return dashboardRepository.sendMsg(userID, listID,name);
 	}
 
+
+	@Override
+	public List getLOginData() {
+		// TODO Auto-generated method stub
+		return dashboardRepository.getLOginData();
+	}
+
 }

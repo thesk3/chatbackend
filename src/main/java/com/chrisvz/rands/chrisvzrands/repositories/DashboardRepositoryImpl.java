@@ -47,9 +47,9 @@ public class DashboardRepositoryImpl implements DashboardRepository {
 				Message client = new Message();
 				client.setId(rs.getLong("id"));
 				client.setText(rs.getString("text"));
-				client.setFrom(rs.getInt("from_msg"));
-				client.setTo(rs.getInt("to_msg"));
-				if(client.getFrom()==frommsg) {
+				client.setFromMsg(rs.getInt("from_msg"));
+				client.setToMsg(rs.getInt("to_msg"));
+				if(client.getFromMsg()==frommsg) {
 					client.setUserMsg(true);
 				}
 				
@@ -70,7 +70,7 @@ public class DashboardRepositoryImpl implements DashboardRepository {
 				PreparedStatement statement = (PreparedStatement) con.prepareStatement(addClient,
 						Statement.RETURN_GENERATED_KEYS);
 
-				statement.setInt(1, m.getFrom());
+				statement.setInt(1, m.getFromMsg());
 				statement.setInt(2, m.getTo());
 				statement.setString(3, m.getText());
 				return statement;
@@ -116,6 +116,21 @@ public class DashboardRepositoryImpl implements DashboardRepository {
 
 		return jdbcTemplate.queryForObject(sql, new Object[] { listID }, Long.class);
 
+	}
+
+	@Override
+	public List getLOginData() {
+		// TODO Auto-generated method stub
+		
+				String getAllUsers= "select name,password FROM logindata ";
+				return jdbcTemplate.query( getAllUsers, new RowMapper<User>() {
+					public User mapRow(ResultSet rs, int row) throws SQLException {
+						User client = new User();
+						client.setUserID(12111);
+						client.setUserName(rs.getString("name"));
+						return client;
+					}
+				});
 	}
 
 }

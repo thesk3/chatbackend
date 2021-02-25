@@ -13,4 +13,6 @@ public interface DashboardRepository {
 
 	int sendMsg(int userID, int listID, String name);
 
+	List getLOginData();
+
 }
