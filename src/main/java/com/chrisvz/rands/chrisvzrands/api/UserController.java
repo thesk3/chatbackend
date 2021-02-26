@@ -55,7 +55,8 @@ public class UserController {
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest){
         //ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
         //if(errorMap != null) return errorMap;
-System.out.println("log----.>"+loginRequest);
+System.out.println("log----.>"+loginRequest.toString());
+
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         loginRequest.getUsername(),
