@@ -34,7 +34,7 @@ public class User implements UserDetails {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "userid")
     private Long id;
 
     @Email(message = "Username needs to be an email")
