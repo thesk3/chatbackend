@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * chrisvzrands
  */
 @Entity
-@Table(name = "user",schema = "public")
+@Table(name = "user",schema = "d7ecutl3390fe6")
 public class User implements UserDetails {
     /**
 	 * 
@@ -34,15 +34,18 @@ public class User implements UserDetails {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
     private Long id;
 
     @Email(message = "Username needs to be an email")
     @NotBlank(message = "username is required")
-    @Column(unique = true)
+	@Column(name = "username")
     private String username;
     @NotBlank(message = "Please enter your full name")
+    @Column(name = "fullName")
     private String fullName;
     @NotBlank(message = "Password field is required")
+    @Column(name = "password")
     private String password;
     @Transient
     private String confirmPassword;
