@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -24,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * chrisvzrands
  */
 @Entity
+@Table(name = "user",schema = "d7ecutl3390fe6")
 public class User implements UserDetails {
     /**
 	 * 
