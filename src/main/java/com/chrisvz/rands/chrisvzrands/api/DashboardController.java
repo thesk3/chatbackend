@@ -128,7 +128,15 @@ public class DashboardController {
 		messagedRepository.save(m);
 		//List l=dashboardService.getUserMeassageList(m.getTo(),m.getFrom());
 		List<Message> l=messagedRepository.getList(m.getToMsg(),m.getFromMsg());
+		for (Iterator iterator = l.iterator(); iterator.hasNext();) {
+			Message o= (Message) iterator.next();
+			//System.out.println("o--->"+o);
 			
+			if(o.getFromMsg()==m.getToMsg()) {
+				o.setUserMsg(true);
+			}
+			
+		}	
 		System.out.println("in message");
 		CustomeResponse  vo =new CustomeResponse ();
 		vo.setCode(200);
