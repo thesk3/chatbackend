@@ -32,8 +32,8 @@ import com.chrisvz.rands.chrisvzrands.validators.UserValidator;
  */
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
-
+//@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired

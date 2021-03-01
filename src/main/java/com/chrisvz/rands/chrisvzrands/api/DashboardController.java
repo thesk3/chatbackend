@@ -27,7 +27,9 @@ import com.chrisvz.rands.chrisvzrands.vo.UserAdd;
 
 @RestController
 @RequestMapping("users")
-@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
+//@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
+@CrossOrigin(origins = "*")
+
 public class DashboardController {
 
 	@Autowired
