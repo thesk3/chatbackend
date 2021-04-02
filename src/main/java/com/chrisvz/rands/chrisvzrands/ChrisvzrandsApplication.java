@@ -33,32 +33,32 @@ public class ChrisvzrandsApplication {
 	
 	
 	
-	@Bean
-    CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("https://dashboard.heroku.com/apps/chatbackenddaa"));
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"));
-        configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
-                "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin",
-                "Cache-Control", "Content-Type"));
-        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
+//	@Bean
+//    CorsConfigurationSource corsConfigurationSource() {
+//        CorsConfiguration configuration = new CorsConfiguration();
+//        configuration.setAllowedOrigins(Arrays.asList("https://dashboard.heroku.com/apps/chatbackenddaa"));
+//        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"));
+//        configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
+//                "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin",
+//                "Cache-Control", "Content-Type"));
+//        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", configuration);
+//        return source;
+//    }
 }
 
 
-@Configuration
- class WebConfiguration implements WebMvcConfigurer {
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry
-            .addMapping("/**")
-            .allowedMethods("*")
-            .allowedHeaders("*")
-            .allowedOrigins("*")
-            .allowCredentials(true);
-    }
-
-}
+//@Configuration
+// class WebConfiguration implements WebMvcConfigurer {
+//
+//    @Override
+//    public void addCorsMappings(CorsRegistry registry) {
+//        registry
+//            .addMapping("/**")
+//            .allowedMethods("*")
+//            .allowedHeaders("*")
+//            .allowedOrigins("*")
+//            .allowCredentials(true);
+//    }
+//
+//}
